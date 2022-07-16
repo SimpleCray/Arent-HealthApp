@@ -17,7 +17,7 @@ export const Navbar = () => {
                     text=''
                     Icon={SVG.Logo}
                 />
-                <div className='nav-link-container'>
+                <div className='link-container'>
                     <CustomLink
                         to='/my-record'
                         text='自分の記録'

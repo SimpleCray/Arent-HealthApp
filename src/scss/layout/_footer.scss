@@ -1,1 +1,11 @@
 @import '../abstract/variables';
+
+.footer {
+    background: $darkerGray;
+    font-weight: 300;
+    height: 128px;
+    .link-container {
+        height: 100%;
+        justify-content: flex-start;
+    }
+}

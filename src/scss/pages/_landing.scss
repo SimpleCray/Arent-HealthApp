@@ -1,0 +1,57 @@
+@import '../abstract/variables';
+
+.landing-page {
+    .card-container {
+        @extend .flex, .align-center, .justify-between;
+        margin-bottom: 56px;
+    }
+    .recommend-card {
+        @extend .flex-col, .align-center;
+        width: 24%;
+        height: 144px;
+        background: $almostBlack;
+        .header {
+            color: $yellow;
+            font-family: 'Inter';
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 22px;
+            margin-top: 24px;
+        }
+        hr {
+            width: 56px;
+        }
+        .sub-text {
+            color: white;
+            font-weight: 300;
+            font-size: 18px;
+        }
+        margin-right: 32px;
+    }
+
+    .article-card {
+        @extend .flex-col;
+        width: 24%;
+        height: 222px;
+        margin-right: 8px;
+        font-weight: 300;
+        .image-container {
+            height: 144px;
+            background-size: cover;
+        }
+        .description{
+            color: black;
+            font-size: 15px;
+            margin-top: 5px;
+        }
+        .tag-container {
+            @extend .flex;
+            .tag {
+                color: $orange;
+                margin-right: 10px;
+                font-size: 12px;
+            }
+        }
+    }
+}
