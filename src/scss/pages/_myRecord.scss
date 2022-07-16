@@ -1,0 +1,36 @@
+@import '../abstract/variables';
+
+.my-record-page {
+    .record-card {
+        width: 33%;
+        height: 288px;
+        background: $yellow;
+        .record-inner {
+            @extend .flex-col, .align-center;
+            background-size: cover !important;
+            margin: 24px;
+            height: calc(100% - 48px);
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+        }
+        .header {
+            color: $yellow;
+            font-family: 'Inter';
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 30px;
+            margin-top: 24px;
+        }
+        .button {
+            background: $orange;
+        }
+        margin-right: 48px;
+    }
+
+    @media screen and (max-width: 1280px) {
+        .record-card {
+            width: 288px;
+        }
+    }
+}

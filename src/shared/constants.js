@@ -22,3 +22,9 @@ export const RECOMMEND_CARD = [
     {header: 'RECOMMENDED BEAUTY', subText: '美容'},
     {header: 'RECOMMENDED HEALTH', subText: '健康'},
 ]
+
+export const RECORD_CARD = [
+    {image: '/img/MyRecommend-1.jpg', header: 'BODY RECORD', subText: '自分のカラダの記録'},
+    {image: '/img/MyRecommend-2.jpg', header: 'MY EXCERCISE', subText: '自分の運動の記録'},
+    {image: '/img/MyRecommend-3.jpg', header: 'MY DIARY', subText: '自分の日記'},
+]

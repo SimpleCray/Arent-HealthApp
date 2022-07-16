@@ -12,6 +12,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+.wrap {
+    flex-wrap: wrap;
+}
 .align-center {
     align-items: center;
 }
@@ -26,5 +29,11 @@ body {
 }
 .last-item {
     margin-right: 0 !important;
+}
+
+/* Card */
+.card-container {
+    @extend .flex, .align-center, .justify-between;
+    margin-bottom: 56px;
 }
 

@@ -9,11 +9,8 @@ export const Navbar = () => {
     return (
         <div className='navbar'>
             <div className='container'>
-                {/* <div>
-                    <SVG.Logo />
-                </div> */}
                 <CustomLink
-                    to='/test'
+                    to='/'
                     text=''
                     Icon={SVG.Logo}
                 />
