@@ -1,0 +1,51 @@
+@import '../abstract/variables';
+
+.navbar {
+    background: $darkerGray;
+    font-weight: 300;
+    height: 64px;
+    .container {
+        @extend .flex, .align-center, .justify-between;
+    }
+    .nav-link-container {
+        @extend .flex, .justify-between;
+        .custom-link {
+            @extend .flex, .align-center;
+            margin-right: 50px;
+            .last {
+                margin-right: 0px
+            }
+            svg {
+                margin-right: 5px;
+            }
+        }
+        .nav-link {
+            @extend .flex, .align-center;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            .selected {
+                color: $orange;
+            }
+        }
+        .nav-link:hover {
+            color: $yellow;
+        }
+    }
+    .menu-button {
+        cursor: pointer;
+        .menu-option {
+            position: absolute;
+            background: $gray;
+            width: 272px;
+            margin: 20px 0px 0px -100px;
+            .option {
+                @extend .flex, .align-center;
+                height: 72px;
+                padding-left: 30px;
+                border-bottom: 1px solid #656565;
+                border-top: 1px solid #8B8B8B;
+            }
+        }
+    }
+}
