@@ -81,8 +81,8 @@ const MyRecordPage = () => {
                             <Line height='200px' options={options} data={myRecordLineChartData} />
                         </div>
                         <div className='button-container'>
-                            {buttons.map((button) => (
-                                <button className={`button ${button.active && 'active'}`}>{button.text}</button>
+                            {buttons.map((button, index) => (
+                                <button key={`button-${index}`} className={`button ${button.active && 'active'}`}>{button.text}</button>
                             ))}
                         </div>
                     </div>
@@ -95,7 +95,7 @@ const MyRecordPage = () => {
                         </div>
                         <div className='data-container'>
                             {Array.from({ length: 20 }, () => ({ name: '家事全般（立位・軽い）', kcal: 26, duration: '10 min' })).map((item, index) => (
-                                <div className='data-item'>
+                                <div className='data-item' key={`data-${index}`}>
                                     <li>
                                         <div className='name'>
                                             {item.name}
