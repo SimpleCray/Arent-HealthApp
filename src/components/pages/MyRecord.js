@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { COLOR, RECORD_CARD } from '../../shared/constants';
 import { myRecordLineChartData } from '../../shared/mock-data';
@@ -13,20 +13,28 @@ const MyRecordPage = () => {
                 display: false,
             },
         },
+        layout: {
+            padding: {
+                left: 50,
+                right: 50,
+                top: 10,
+                bottom: 10,
+            },
+        },
         scales: {
             x: {
                 ticks: {
-                    color: "white",
+                    color: 'white',
                     font: {
                         size: 10,
                         weight: 300,
-                    }
+                    },
                 },
                 grid: {
                     drawBorder: false, // <-- this removes axis line
                     lineWidth: 0.7,
-                    color: COLOR.gray
-                }
+                    color: COLOR.gray,
+                },
             },
             y: {
                 display: false,
@@ -38,6 +46,12 @@ const MyRecordPage = () => {
         maintainAspectRatio: false,
     };
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+    const buttons = [
+        { text: '日', active: false },
+        { text: '週', active: false },
+        { text: '月', active: false },
+        { text: '年', active: true },
+    ];
     return (
         <div className='my-record-page'>
             <Navbar />
@@ -48,13 +62,51 @@ const MyRecordPage = () => {
                             <div key={index} className={`record-card ${index === RECORD_CARD.length - 1 && 'last-item'}`}>
                                 <div
                                     className='record-inner'
-                                    style={{ background: `linear-gradient( rgba(70, 70, 70, 0.5), rgba(70, 70, 70, 0.5) ), url('${card.image}` }}
-                                ></div>
+                                    style={{ background: `linear-gradient( rgba(50, 50, 50, 0.6), rgba(50, 50, 50, 0.6) ), url('${card.image}` }}
+                                >
+                                    <div className='header'>{card.header}</div>
+                                    <div className='banner'>{card.subText}</div>
+                                </div>
                             </div>
                         ))}
                     </div>
                     <div className='chart-container'>
-                        <Line height='200px' options={options} data={myRecordLineChartData} />
+                        <div className='chart-header'>
+                            <div className='chart-name'>
+                                BODY <br /> RECORD
+                            </div>
+                            <div className='date'>2021.05.21</div>
+                        </div>
+                        <div>
+                            <Line height='200px' options={options} data={myRecordLineChartData} />
+                        </div>
+                        <div className='button-container'>
+                            {buttons.map((button) => (
+                                <button className={`button ${button.active && 'active'}`}>{button.text}</button>
+                            ))}
+                        </div>
+                    </div>
+                    <div className='chart-container'>
+                        <div className='chart-header'>
+                            <div className='chart-name'>
+                                MY <br /> EXERCISE
+                            </div>
+                            <div className='date'>2021.05.21</div>
+                        </div>
+                        <div className='data-container'>
+                            {Array.from({ length: 20 }, () => ({ name: '家事全般（立位・軽い）', kcal: 26, duration: '10 min' })).map((item, index) => (
+                                <div className='data-item'>
+                                    <li>
+                                        <div className='name'>
+                                            {item.name}
+                                            <br />
+                                            <span className='kcal'>{item.kcal}kcal</span>
+                                        </div>
+                                    </li>
+                                    <div className='duration'>{item.duration}</div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
