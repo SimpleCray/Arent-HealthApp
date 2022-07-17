@@ -1,3 +1,14 @@
+export const COLOR = {
+    yellow: '#FFCC21',
+    orange:' #FF963C',
+    darkerOrange: '#EA6C00',
+    aqua: '#8FE9D0',
+    lightGray: '#b3b3b3',
+    gray: '#777777',
+    darkerGray: '#414141',
+    almostBlack: '#2E2E2E',
+}
+
 export const MENU_LINK = [
     {to: '/', text: '自分の記録'},
     {to: '/', text: '体重グラフ'},
