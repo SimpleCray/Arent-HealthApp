@@ -55,12 +55,16 @@
             clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
             background: linear-gradient(155.89deg, $yellow 8.26%, $orange 91.18%);
             border: none;
+            cursor: pointer;
             .text {
                 font-family: 'Inter';
                 font-weight: 400;
                 font-size: 20px;
                 color: white;
             }
+        }
+        .hex-button:hover {
+            background: linear-gradient(155.89deg, $yellow 8.26%, $darkerOrange 91.18%);
         }
     }
     .article-card {
