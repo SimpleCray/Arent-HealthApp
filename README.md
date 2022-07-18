@@ -14,8 +14,17 @@ This command installs a package and any packages that it depends on.
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## `App Navigate`
+You can navigate through different page of app with below paths:
+
+### `/`
+Home page
+
+### `/after-login`
+Page display after you logged in
+
+### `/my-record`
+My Record Page
 
 ## Contact
 
