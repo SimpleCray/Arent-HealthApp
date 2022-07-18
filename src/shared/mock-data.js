@@ -51,6 +51,81 @@ export const LANDING_ARTICLE = [
     },
 ];
 
+export const mealData = [
+    {
+        image: 'img/m01.jpg',
+        description: '05.21.Morning',
+    },
+    {
+        image: 'img/l03.jpg',
+        description: '05.21.Lunch',
+    },
+    {
+        image: 'img/d01.jpg',
+        description: '05.21.Dinner',
+    },
+    {
+        image: 'img/l01.jpg',
+        description: '05.21.Snack',
+    },
+    {
+        image: 'img/m01.jpg',
+        description: '05.20.Morning',
+    },
+    {
+        image: 'img/l02.jpg',
+        description: '05.20.Lunch',
+    },
+    {
+        image: 'img/d02.jpg',
+        description: '05.20.Dinner',
+    },
+    {
+        image: 'img/s01.jpg',
+        description: '05.21.Snack',
+    },
+]
+
+export const lineChartOptions = {
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false,
+        },
+    },
+    layout: {
+        padding: {
+            left: 50,
+            right: 50,
+            top: 10,
+            bottom: 10,
+        },
+    },
+    scales: {
+        x: {
+            ticks: {
+                color: 'white',
+                font: {
+                    size: 10,
+                    weight: 300,
+                },
+            },
+            grid: {
+                drawBorder: false, // <-- this removes axis line
+                lineWidth: 0.7,
+                color: COLOR.gray,
+            },
+        },
+        y: {
+            display: false,
+            grid: {
+                display: false,
+            },
+        },
+    },
+    maintainAspectRatio: false,
+};
+
 export const myRecordLineChartData = {
     labels: ['6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月', '4月', '5月',],
     datasets: [

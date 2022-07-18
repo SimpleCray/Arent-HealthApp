@@ -36,4 +36,38 @@ body {
     @extend .flex, .align-center, .justify-between;
     margin-bottom: 56px;
 }
+.article-card {
+    @extend .flex-col;
+    width: calc(25% - 8px);
+    height: 222px;
+    margin-right: 8px;
+    font-weight: 300;
+    .image-container {
+        height: 144px;
+        background-size: cover !important;
+        position: relative;
+        .created-date {
+            background: $yellow;
+            font-size: 15px;
+            color: white;
+            width: fit-content;
+            padding: 2px 5px;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .description{
+        color: black;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    .tag-container {
+        @extend .flex;
+        .tag {
+            color: $orange;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+    }
+}
 

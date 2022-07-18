@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { COLOR, RECORD_CARD } from '../../shared/constants';
-import { myRecordLineChartData } from '../../shared/mock-data';
+import { lineChartOptions, myRecordLineChartData } from '../../shared/mock-data';
 import { Footer, Navbar } from '../shared';
 import { Line } from 'react-chartjs-2';
 import ScrollTopButton from '../shared/ScrollTopButton';
@@ -16,45 +16,6 @@ const diaryItem = {
 }
 
 const MyRecordPage = () => {
-    const options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                display: false,
-            },
-        },
-        layout: {
-            padding: {
-                left: 50,
-                right: 50,
-                top: 10,
-                bottom: 10,
-            },
-        },
-        scales: {
-            x: {
-                ticks: {
-                    color: 'white',
-                    font: {
-                        size: 10,
-                        weight: 300,
-                    },
-                },
-                grid: {
-                    drawBorder: false, // <-- this removes axis line
-                    lineWidth: 0.7,
-                    color: COLOR.gray,
-                },
-            },
-            y: {
-                display: false,
-                grid: {
-                    display: false,
-                },
-            },
-        },
-        maintainAspectRatio: false,
-    };
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
     const buttons = [
         { text: '日', active: false },
@@ -88,7 +49,7 @@ const MyRecordPage = () => {
                             <div className='date'>2021.05.21</div>
                         </div>
                         <div>
-                            <Line height='200px' options={options} data={myRecordLineChartData} />
+                            <Line height='200px' options={lineChartOptions} data={myRecordLineChartData} />
                         </div>
                         <div className='button-container'>
                             {buttons.map((button, index) => (

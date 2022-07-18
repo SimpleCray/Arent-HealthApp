@@ -1,3 +1,5 @@
+import SVG from "../resources/svg";
+
 export const COLOR = {
     yellow: '#FFCC21',
     orange:' #FF963C',
@@ -38,4 +40,11 @@ export const RECORD_CARD = [
     {image: '/img/MyRecommend-1.jpg', header: 'BODY RECORD', subText: '自分のカラダの記録'},
     {image: '/img/MyRecommend-2.jpg', header: 'MY EXCERCISE', subText: '自分の運動の記録'},
     {image: '/img/MyRecommend-3.jpg', header: 'MY DIARY', subText: '自分の日記'},
+]
+
+export const FOOD_MENU = [
+    {icon: SVG.KnifeFork, text: 'Morning'},
+    {icon: SVG.KnifeFork, text: 'Lunch'},
+    {icon: SVG.KnifeFork, text: 'Dinner'},
+    {icon: SVG.Snack, text: 'Snack'},
 ]
