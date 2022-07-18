@@ -4,6 +4,16 @@ import { COLOR, RECORD_CARD } from '../../shared/constants';
 import { myRecordLineChartData } from '../../shared/mock-data';
 import { Footer, Navbar } from '../shared';
 import { Line } from 'react-chartjs-2';
+import ScrollTopButton from '../shared/ScrollTopButton';
+
+const exerciseItem = { name: '家事全般（立位・軽い）', kcal: 26, duration: '10 min' }
+
+const diaryItem = {
+    date: '2021.05.21',
+    hour: '23:25',
+    name: '私の日記の記録が一部表示されます。',
+    description: 'テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…'
+}
 
 const MyRecordPage = () => {
     const options = {
@@ -94,7 +104,7 @@ const MyRecordPage = () => {
                             <div className='date'>2021.05.21</div>
                         </div>
                         <div className='data-container'>
-                            {Array.from({ length: 20 }, () => ({ name: '家事全般（立位・軽い）', kcal: 26, duration: '10 min' })).map((item, index) => (
+                            {Array.from({ length: 20 }, () => exerciseItem).map((item, index) => (
                                 <div className='data-item' key={`data-${index}`}>
                                     <li>
                                         <div className='name'>
@@ -108,8 +118,25 @@ const MyRecordPage = () => {
                             ))}
                         </div>
                     </div>
+                    <div className='my-diary-container'>
+                        <div className='name'>MY DIARY</div>
+                        <div className='data-container'>
+                        {Array.from({ length: 8 }, () => diaryItem).map((item, index) => (
+                            <div key={`diary-${index}`} className={`data-item ${(index + 1) % 4 === 0 && 'last-item'}`}>
+                                <div className='date-time'>{item.date}</div>
+                                <div className='date-time' style={{marginBottom: 10}}>{item.hour}</div>
+                                <div className='text'>{item.name}</div>
+                                <div className='text'>{item.description}</div>
+                            </div>
+                        ))}
+                        </div>
+                    </div>
+                    <div className='bottom-button-container'>
+                        <button className='bottom-button'>コラムをもっと見る</button>
+                    </div>
                 </div>
             </div>
+            <ScrollTopButton/>
             <Footer />
         </div>
     );

@@ -60,24 +60,6 @@
             }
         }
     }
-
-    .bottom-button-container {
-        text-align: center;
-        .bottom-button {
-            width: 296px;
-            height: 56px;
-            background: linear-gradient(32.95deg, $yellow 8.75%, $orange 86.64%);
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            color: white;
-            font-weight: 300;
-            border-radius: 5px;
-        }
-        .bottom-button:hover {
-            filter: grayscale(10%);
-        }
-    }
     
     @media screen and (max-width: 1250px) {
         

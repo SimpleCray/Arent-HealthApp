@@ -117,13 +117,44 @@
             border-radius: 5px;
         }
         .data-container::-webkit-scrollbar-thumb:hover {
-            background: $orange; 
+            background: $orange;
+        }
+    }
+
+    .my-diary-container {
+        margin-bottom: 20px;
+        .name {
+            font-family: 'Inter';
+            font-weight: 400;
+            font-size: 22px;
+            margin-bottom: 5px
+        }
+        .data-container {
+            @extend .flex, .wrap;
+            .data-item {
+                // height: 231px;
+                width: calc(25% - 39px);
+                padding: 10px 15px 10px 10px;
+                border: 2px solid #707070;
+                margin-right: 12px;
+                margin-bottom: 12px;
+                .date-time {
+                    font-size: 18px;
+                }
+                .text {
+                    font-size: 12px;
+                    font-weight: 300;
+                }
+            }
         }
     }
 
     @media screen and (max-width: 1280px) {
         .record-card {
             width: 288px;
+        }
+        .my-diary-container .data-container .data-item {
+            height: 231px;
         }
     }
 }
